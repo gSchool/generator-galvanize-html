@@ -1,0 +1,18 @@
+{
+  "name": "generator-galvanize-html",
+  "version": "0.1.0",
+  "description": "Yeoman generator for a basic HTML5 boilerplate.",
+  "author": "Michael Herman",
+  "license": "ISC",
+  "repository": "https://github.com/gSchool/generator-galvanize-html",
+  "files": ["app"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator", "galvanize"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.20.2"
+  }
+}
