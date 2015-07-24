@@ -10,7 +10,6 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // greeting
-    console.log(this.yeoman);
     console.log(chalk.magenta("Welcome to Galvanize's HTML Generator"));
 
     var prompts = [
@@ -56,12 +55,17 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
 
   },
   createApp: function(){
-    this.mkdir("app");
-      this.mkdir("app/css");
-      this.mkdir("app/sections");
-      this.mkdir("build");
-
     this.template('index.html');
+    this.copy('css/main.css', 'css/main.css');
+    if(this.props.jquery) {
+      this.copy('js/main-jquery.js', 'js/main.js');
+    }
+    else {
+      this.copy('js/main.js', 'js/main.js');
+    }
+    if(this.props.jasmine) {
+      this.directory('test', 'test');
+    }
   },
 
 });

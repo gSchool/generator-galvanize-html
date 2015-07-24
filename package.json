@@ -5,12 +5,16 @@
   "author": "Michael Herman",
   "license": "ISC",
   "repository": "https://github.com/gSchool/generator-galvanize-html",
-  "files": ["app"],
+  "files": [
+    "app"
+  ],
   "main": "app/index.js",
   "keywords": [
-    "yeoman-generator", "galvanize"
+    "yeoman-generator",
+    "galvanize"
   ],
   "dependencies": {
+    "chalk": "^1.1.0",
     "yeoman-generator": "^0.20.2"
   }
 }
