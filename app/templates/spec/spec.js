@@ -1,4 +1,4 @@
-var code = require('../main.js');
+var code = require('../js/main.js');
 
 
 // describe('', function() {

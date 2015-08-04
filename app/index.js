@@ -64,7 +64,7 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
       this.copy('js/main.js', 'js/main.js');
     }
     if(this.props.jasmine) {
-      this.directory('test', 'test');
+      this.directory('spec', 'spec');
     }
   },
 
