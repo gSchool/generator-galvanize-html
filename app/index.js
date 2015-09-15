@@ -42,8 +42,8 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
       },
       {
         type: 'confirm',
-        name: 'jasmine',
-        message: 'Jasmine tests?',
+        name: 'mocha',
+        message: 'Mocha tests?',
         default: false
       }
     ];
@@ -63,8 +63,8 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     else {
       this.copy('js/main.js', 'js/main.js');
     }
-    if(this.props.jasmine) {
-      this.directory('spec', 'spec');
+    if(this.props.mocha) {
+      this.directory('test', 'test');
     }
   },
 
