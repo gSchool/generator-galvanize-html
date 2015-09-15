@@ -45,6 +45,12 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
         name: 'mocha',
         message: 'Mocha tests?',
         default: false
+      },
+      {
+        type: 'confirm',
+        name: 'angular',
+        message: 'Angular?',
+        default: false
       }
     ];
 
@@ -63,8 +69,9 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     this.copy('css/main.css', 'css/main.css');
     if(this.props.jquery) {
       this.copy('js/main-jquery.js', 'js/main.js');
-    }
-    else {
+    } else if(this.props.angular) {
+      this.copy('js/main-angular.js', 'js/main.js');
+    } else {
       this.copy('js/main.js', 'js/main.js');
     }
     if(this.props.mocha) {
