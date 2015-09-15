@@ -1,4 +1,4 @@
-// add angular code
+// sample angular code
 
 var app = angular.module('myApp', []);
 
