@@ -62,9 +62,9 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
   },
   createApp: function(){
     if(this.props.angular) {
-      this.template('index.html', 'index.html');
-    } else {
       this.template('index2.html', 'index.html');
+    } else {
+      this.template('index.html', 'index.html');
     }
     this.copy('css/main.css', 'css/main.css');
     if(this.props.jquery) {
