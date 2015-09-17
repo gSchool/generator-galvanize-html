@@ -61,18 +61,23 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
 
   },
   createApp: function(){
+    // html
     if(this.props.angular) {
       this.template('index2.html', 'index.html');
     } else {
       this.template('index.html', 'index.html');
     }
+    // css
     this.copy('css/main.css', 'css/main.css');
+    // javascript
     if(this.props.jquery) {
       this.copy('js/main-jquery.js', 'js/main.js');
-    } else if(this.props.angular) {
-      this.copy('js/main-angular.js', 'js/main.js');
     } else {
       this.copy('js/main.js', 'js/main.js');
+    }
+    // angular
+    if(this.props.angular) {
+      this.copy('js/main-angular.js', 'js/angular.js');
     }
     if(this.props.mocha) {
       this.directory('test', 'test');
