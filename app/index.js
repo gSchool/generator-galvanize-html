@@ -23,7 +23,7 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
         type: 'confirm',
         name: 'normalize',
         message: 'Normalize.css?',
-        default: true,
+        default: false,
         when: function(answers) {
           return !answers.bootstrap;
         }
@@ -50,6 +50,12 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
         type: 'confirm',
         name: 'angular',
         message: 'Angular?',
+        default: false
+      },
+      {
+        type: 'confirm',
+        name: 'gulp',
+        message: 'Gulp?',
         default: false
       }
     ];
@@ -79,8 +85,14 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     if(this.props.angular) {
       this.copy('js/main-angular.js', 'js/angular.js');
     }
+    // mocha
     if(this.props.mocha) {
       this.directory('test', 'test');
+    }
+    // gulp
+    if(this.props.mocha) {
+      this.copy('gulpfile.js', 'gulpfile.js');
+      this.copy('package.json', 'package.json');
     }
   },
 
