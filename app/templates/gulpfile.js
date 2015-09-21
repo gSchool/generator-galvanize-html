@@ -5,7 +5,6 @@ var connect = require('gulp-connect')
 // configure connect task
 gulp.task('connect', function() {
   connect.server({
-    root: '.',
     livereload: true
   });
 });

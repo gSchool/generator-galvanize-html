@@ -9,6 +9,8 @@
 1. Install the generator - `npm install -g generator-galvanize-html`
 1. Run - `yo galvanize-html`
 
+> Make sure you run `npm install` if you add Gulp to your project.
+
 ## Todo
 
 1. Test various iterations of the generator
