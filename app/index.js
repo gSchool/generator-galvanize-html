@@ -75,8 +75,8 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     }
     // css
     this.copy('css/main.css', 'css/main.css');
-    // javascript (but not angular)
-    if(this.props.jquery && !this.props.angular) {
+    // javascript
+    if(this.props.jquery) {
       this.copy('js/main-jquery.js', 'js/main.js');
     } else {
       this.copy('js/main.js', 'js/main.js');
