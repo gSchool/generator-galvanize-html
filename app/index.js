@@ -75,15 +75,15 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     }
     // css
     this.copy('css/main.css', 'css/main.css');
-    // javascript
-    if(this.props.jquery) {
+    // javascript (but not angular)
+    if(this.props.jquery && !this.props.angular) {
       this.copy('js/main-jquery.js', 'js/main.js');
     } else {
       this.copy('js/main.js', 'js/main.js');
     }
     // angular
     if(this.props.angular) {
-      this.copy('js/main-angular.js', 'js/angular.js');
+      this.copy('js/main-angular.js', 'js/app.js');
     }
     // mocha
     if(this.props.mocha) {
