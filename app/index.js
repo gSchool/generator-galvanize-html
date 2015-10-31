@@ -69,30 +69,30 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
   createApp: function(){
     // html
     if(this.props.angular) {
-      this.template('index2.html', 'index.html');
+      this.template('./src/index2.html', './src/index.html');
     } else {
-      this.template('index.html', 'index.html');
+      this.template('./src/index.html', './src/index.html');
     }
     // css
-    this.copy('css/main.css', 'css/main.css');
+    this.copy('./src/css/main.css', './src/css/main.css');
     // javascript
     if(this.props.jquery) {
-      this.copy('js/main-jquery.js', 'js/main.js');
+      this.copy('./src/js/main-jquery.js', './src/js/main.js');
     } else {
-      this.copy('js/main.js', 'js/main.js');
+      this.copy('./src/js/main.js', './src/js/main.js');
     }
     // angular
     if(this.props.angular) {
-      this.copy('js/main-angular.js', 'js/app.js');
+      this.copy('./src/js/main-angular.js', './src/js/app.js');
     }
     // mocha
     if(this.props.mocha) {
-      this.directory('test', 'test');
+      this.directory('./src/test', './src/test');
     }
     // gulp
     if(this.props.gulp) {
-      this.copy('gulpfile.js', 'gulpfile.js');
-      this.copy('package.json', 'package.json');
+      this.copy('./src/gulpfile.js', './src/gulpfile.js');
+      this.copy('./src/package.json', './src/package.json');
     }
   },
 
