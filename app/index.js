@@ -51,12 +51,6 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
         name: 'angular',
         message: 'Angular?',
         default: false
-      },
-      {
-        type: 'confirm',
-        name: 'gulp',
-        message: 'Gulp?',
-        default: false
       }
     ];
 
@@ -90,10 +84,9 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
       this.directory('./src/test', './src/test');
     }
     // gulp
-    if(this.props.gulp) {
-      this.copy('gulpfile.js', 'gulpfile.js');
-      this.copy('package.json', 'package.json');
-    }
+    this.copy('gulpfile.js', 'gulpfile.js');
+    // package.json
+    this.copy('package.json', 'package.json');
   },
 
 });
