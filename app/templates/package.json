@@ -2,7 +2,7 @@
   "name": "update-me",
   "version": "0.0.0",
   "description": "",
-  "main": "./src/gulpfile.js",
+  "main": "gulpfile.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {
