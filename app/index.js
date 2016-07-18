@@ -87,6 +87,8 @@ var GalvanizeHTMLGenerator = yeoman.generators.Base.extend({
     this.copy('gulpfile.js', 'gulpfile.js');
     // package.json
     this.copy('package.json', 'package.json');
+    // .jscsrc
+    this.copy('.jscsrc', '.jscsrc');
   },
 
 });

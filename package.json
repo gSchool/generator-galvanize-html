@@ -1,6 +1,6 @@
 {
   "name": "generator-galvanize-html",
-  "version": "0.8.0",
+  "version": "0.8.3",
   "description": "Yeoman generator for a basic HTML5 boilerplate.",
   "author": "Michael Herman",
   "license": "ISC",
@@ -15,6 +15,6 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
-    "yeoman-generator": "^0.23.3"
+    "yeoman-generator": "^0.22.4"
   }
 }
