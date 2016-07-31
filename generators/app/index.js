@@ -19,9 +19,9 @@
           default: false
         }
       ];
-      this.prompt(prompts, function (props) {
+      return this.prompt(prompts).then(function (props) {
+        // To access props later use this.props.someAnswer;
         this.props = props;
-        done();
       }.bind(this));
     },
     writingHTML: function () {
