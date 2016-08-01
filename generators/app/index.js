@@ -32,7 +32,7 @@
         );
       } else {
         this.fs.copy(
-          this.templatePath('./src/index2.html'),
+          this.templatePath('./src/index.html'),
           this.destinationPath('./src/index.html')
         );
       }
