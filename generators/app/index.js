@@ -9,7 +9,7 @@
   module.exports = yeoman.Base.extend({
     prompting: function () {
       this.log(yosay(
-        'Welcome to the finest ' + chalk.red('generator-galvanize-linter') + ' generator!'
+        'Welcome to the finest ' + chalk.red('generator-galvanize-html') + ' generator!'
       ));
       var prompts = [
         {
@@ -40,12 +40,20 @@
     writingJavaScript: function () {
       if (this.props.angular) {
         this.fs.copy(
-          this.templatePath('./src/js/main-angular.js'),
+          this.templatePath('./src/js/ng-app.js'),
           this.destinationPath('./src/js/app.js')
+        );
+        this.fs.copy(
+          this.templatePath('./src/js/ng-config.js'),
+          this.destinationPath('./src/js/config.js')
+        );
+        this.fs.copy(
+          this.templatePath('./src/js/components/main/main.controller.js'),
+          this.destinationPath('./src/js/components/main/main.controller.js')
         );
       } else {
         this.fs.copy(
-          this.templatePath('./src/js/main-jquery.js'),
+          this.templatePath('./src/js/main.js'),
           this.destinationPath('./src/js/main.js')
         );
       }
@@ -57,14 +65,16 @@
       );
     },
     writingMocha: function () {
-      this.fs.copy(
-        this.templatePath('./src/test/index.html'),
-        this.destinationPath('./src/test/index.html')
-      );
-      this.fs.copy(
-        this.templatePath('./src/test/test.js'),
-        this.destinationPath('./src/test/test.js')
-      );
+      if (!this.props.angular) {
+        this.fs.copy(
+          this.templatePath('./src/test/index.html'),
+          this.destinationPath('./src/test/index.html')
+        );
+        this.fs.copy(
+          this.templatePath('./src/test/test.js'),
+          this.destinationPath('./src/test/test.js')
+        );
+      }
     },
     writingFiles: function () {
       this.fs.copy(
@@ -78,6 +88,10 @@
       this.fs.copy(
         this.templatePath('.jscsrc'),
         this.destinationPath('.jscsrc')
+      );
+      this.fs.copy(
+        this.templatePath('.jshintrc'),
+        this.destinationPath('.jshintrc')
       );
     }
   });

@@ -1,5 +1,5 @@
 // jquery test
-$(document).on('ready', function() {
+$(document).on('ready', () => {
   console.log('sanity check!');
 });
 

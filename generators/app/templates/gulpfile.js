@@ -1,15 +1,15 @@
 // *** dependencies *** //
 
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
-var connect = require('gulp-connect');
-var runSequence = require('run-sequence');
+const gulp = require('gulp');
+const jshint = require('gulp-jshint');
+const jscs = require('gulp-jscs');
+const connect = require('gulp-connect');
+const runSequence = require('run-sequence');
 
 
 // *** tasks *** ///
 
-gulp.task('connect', function () {
+gulp.task('connect', () => {
   connect.server({
     root: './src/',
     port: 8888,
@@ -17,22 +17,22 @@ gulp.task('connect', function () {
   });
 });
 
-gulp.task('html', function () {
+gulp.task('html', () => {
   gulp.src('./src/*.html')
     .pipe(connect.reload());
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   gulp.src('./src/css/*.css')
     .pipe(connect.reload());
 });
 
-gulp.task('javascript', function () {
+gulp.task('javascript', () => {
   gulp.src('./src/**/*.js')
     .pipe(connect.reload());
 });
 
-gulp.task('jshint', function() {
+gulp.task('jshint',() => {
   return gulp.src('./src/**/*.js')
     .pipe(jshint({
       esnext: true
@@ -41,21 +41,21 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('style', function() {
+gulp.task('style', () => {
   return gulp.src('src/**/*.js')
     .pipe(jscs())
     .pipe(jscs.reporter())
     .pipe(jscs.reporter('fail'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('./src/js/*.js', ['jshint', 'javascript', 'style']);
+gulp.task('watch', () => {
+  gulp.watch('./src/js/**/*.js', ['jshint', 'javascript', 'style']);
   gulp.watch(['./src/*.html'], ['html']);
   gulp.watch(['./src/css/*.css'], ['css']);
 });
 
 // *** defailt task *** //
-gulp.task('default', function() {
+gulp.task('default', () => {
   runSequence(
     ['jshint'],
     ['style'],
