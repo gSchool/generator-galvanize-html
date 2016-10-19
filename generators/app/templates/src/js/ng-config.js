@@ -4,7 +4,10 @@
 
   angular
     .module('myApp.config', [])
-    .config(appConfig);
+    .config(appConfig)
+    .run(function($templateCache) {
+      $templateCache.removeAll();
+    }
 
   function appConfig() {}
 

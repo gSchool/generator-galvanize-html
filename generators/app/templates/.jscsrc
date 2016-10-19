@@ -52,7 +52,11 @@
     "catch",
     "typeof"
   ],
-  "safeContextKeyword": "vm",
+  "safeContextKeyword": [
+    "self",
+    "target",
+    "vm"
+  ],
   "validateLineBreaks": "LF",
   "validateQuoteMarks": "'",
   "validateIndentation": 2,
