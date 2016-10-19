@@ -93,6 +93,10 @@
         this.templatePath('.jshintrc'),
         this.destinationPath('.jshintrc')
       );
+      this.fs.copy(
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore')
+      );
     }
   });
 
